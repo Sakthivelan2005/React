@@ -1,0 +1,21 @@
+Destructing:
+
+object, array
+
+default destructing
+nested Destructing
+
+forEach - It is used only for iterating /  traverse
+map = returns new array which can be modified 
+reduce - we can modify the structure => array to string, object to array..
+
+
+array.reduces(accumulator , index, value, entire_array)
+
+search deep copy and shelt... copy in js
+
+
+Reconsideration - 
+
+JSX - JS XML - return set of code
+jS - no return
