@@ -1,0 +1,50 @@
+Functional Componont:
+-> State Less Component
+-> After React 16, It changed to State full component by implementing hooks -> useState and UseEffect
+
+import React, { useState } from 'react';
+
+function Counter({ initialCount }) {
+  const [count, setCount] = useState(initialCount);
+
+  return (
+    <button onClick={() => setCount(count + 1)}>
+      Count: {count}
+    </button>
+  );
+}
+
+
+Class Component:
+-> State full component.
+
+
+
+
+Important Checks:
+-> It returns only, One <div>
+-> return <h1>Head</h1> correct
+-> return <h1>Head</h1> <p>World</> Wrong
+
+
+Export default Home
+
+Export {Home}
+
+In Functional component only 1 default export should be there..!
+
+
+
+
+Array Rendering:
+
+While using index in array rendering:
+You should assure that, You should modify the array because while rendering there is change is index so your output may differ..!
+
+
+If your going to do some operations in array use RETURN Key word.
+
+
+React.StrictMode:
+
+-> 
