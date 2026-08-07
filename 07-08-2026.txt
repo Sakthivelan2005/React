@@ -1,0 +1,28 @@
+React Hooks
+
+- React Hooks are the functions that allow functional components to use state and lifecycle features without class component.
+
+useState
+useEffect
+useContext
+useMemo
+useRef
+
+Triggers Re-render - Props and State
+
+while using props - it return functiona component simple JSX file, Which can't be changed
+To change the 
+
+
+useState Syntax:
+
+Variable    Function to Change
+  ↓             ↓
+const [cats, setCats] = useState([]) -> Initial Value
+        ↑                   ↑
+ Current Value         React Hooks
+
+
+
+ setCount((val) => pre + 1)  // the (val) is callback() function, used to call previous state value. //This is best Practise
+ setCount(count + 1) //This will do same performance, 
