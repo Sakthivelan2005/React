@@ -2,7 +2,7 @@ import React from 'react'
 import Students from './Students';
 
 export default function ArrayRendering() {
-    const students = ["Jayakath", "Ajith", "Mahesh", "Neresh"]
+    const students = ["Jayakath", "Ajith", "Mahesh", "Neresh", "Sakthi"]
   return (
     <div>
         <h1>Student Lists</h1>
