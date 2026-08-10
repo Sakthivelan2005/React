@@ -3,6 +3,7 @@ import ArrayRendering from './components/ArrayRendering'
 import { Student } from './components/ArrayRendering'
 import Counter from './components/Counter'
 import { useState } from 'react'
+import Form from './components/Form'
 function App() {
 
     const [val, setVal] = useState(0)
@@ -21,6 +22,7 @@ function App() {
     setCount={setCount}
   />
 
+    <Form />
     </>
   )
 }

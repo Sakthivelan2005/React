@@ -1,0 +1,9 @@
+Controlled vs UnControlled Component
+
+UnControlled - If the component directly uses OG DOM that component chnaged to UnControlled.
+
+Controlled - In Form validation, The whole code of form is only made with React, It uses Virtual DOM.
+
+Eg: Use useState() 
+
+event.target.value = <value>
