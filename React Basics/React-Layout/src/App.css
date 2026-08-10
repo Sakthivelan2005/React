@@ -1,0 +1,26 @@
+/* App.css */
+
+/* Makes the whole app take the full screen height */
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* This puts the Sidebar and MainContent side-by-side */
+.middle-section {
+  display: flex;
+  flex: 1; /* Pushes the footer to the bottom */
+}
+
+/* Give them width so you can see them */
+.sidebar {
+  width: 250px;
+  background-color: #f4f4f4;
+  padding: 20px;
+}
+
+.main-content {
+  flex: 1; /* Takes up the rest of the space */
+  padding: 20px;
+}
