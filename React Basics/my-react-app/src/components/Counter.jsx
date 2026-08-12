@@ -1,28 +1,27 @@
-import React, { useState } from 'react'
+// Counter.jsx
 
-export default function Counter({val, setVal,count,setCount}) {
+import React, { useEffect, useState } from 'react'
 
-    //const [count, setCount] = useState(0);
-   
+export default function Counter() {
+
+    const [count, setCount] = useState(0);
     const increment = () => {
-        setCount((pre) => pre + val);
+        setCount((pre) => pre + 1);
     }
 
     const decrement = () => {
-        setCount(count - val);
+        setCount(count - 1);
     }
 
-    const increaseVal = () =>{
-        setVal((pre) => pre + 1)
-    }
+    useEffect(() => {
+        document.title = `Count: ${count}`
+    }, [count])
+
   return (
     <div>
         <h1>Count: {count}</h1>
         <button onClick={increment}> Increase</button>
         <button onClick={decrement}> Decreament</button>
-        <h2>Increase: {val}</h2>
-        <button onClick={increaseVal}>Increase</button>
-        <br /><br /><br />
     </div>
   )
 }

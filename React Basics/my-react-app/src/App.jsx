@@ -4,23 +4,18 @@ import { Student } from './components/ArrayRendering'
 import Counter from './components/Counter'
 import { useState } from 'react'
 import Form from './components/Form'
+import { Users } from './components/Users'
 function App() {
-
-    const [val, setVal] = useState(0)
-    const [count, setCount] = useState(0);
   return (
     <>
+    
+    <Users />
     <Home />
     <PlayGround />
 
   <ArrayRendering />
   <Student />
-  <Counter 
-    val={val} 
-    setVal = {setVal}
-    count={count}
-    setCount={setCount}
-  />
+  <Counter />
 
     <Form />
     </>

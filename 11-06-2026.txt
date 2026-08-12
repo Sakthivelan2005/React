@@ -1,0 +1,25 @@
+useEffect:
+- This function contains the logic for your side effect.
+- React runs this function after the component renders and the browser has painted the screen.
+
+On re-run:
+1. No array (omitted): The effect run after every single render
+2. An empty array ([]): The effect run only once, after the initial render (mount)
+3. An array with specific value ([prop1, state2]): The effects runs after the initial render and only when any value in the dependency array changes.
+
+
+useEffect(() => {
+    //..Some code
+},[])
+   ↑
+Dependency Array
+
+
+
+
+
+
+
+AXIOS
+
+-third party 
