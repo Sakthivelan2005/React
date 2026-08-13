@@ -1,0 +1,13 @@
+{
+  "student": [
+    {
+      "FirstName": "Sakthivelan",
+      "LastName": "Sankar",
+      "Email": "23uca016@loyolacollege.edu",
+      "Age": 18,
+      "Course": "Python Full Stack",
+      "id": "DM7ovP4VqIk"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

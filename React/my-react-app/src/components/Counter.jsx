@@ -17,6 +17,18 @@ export default function Counter() {
         document.title = `Count: ${count}`
     }, [count])
 
+    // useEffect(() => {
+    //     console.log("Effect running...!")
+    //     const interval = setInterval(() => {
+    //         setCount(prev => prev + 1)
+    //     },  1000)
+
+    //     return () => {
+    //         console.log("Clearing Interval...!")
+    //         clearInterval(interval);
+    //     }
+    // },[])
+
   return (
     <div>
         <h1>Count: {count}</h1>

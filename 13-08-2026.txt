@@ -1,0 +1,23 @@
+clean-up functiom
+
+useEffect(() => {
+
+    return() =>{
+        clearInterval(Interval);
+    }
+})
+
+useRef()
+
+- access directly to DOM
+
+- TheuseRef hook in React is a function taht returns a mutable ref object that persists for the entire lifetime of the componenet
+
+- It is primarly used to access and manage values or DOM elements that do not trugger a re-render when changed.
+
+SYNTAX:
+                Pass the initial value to 
+                    useRef Hook
+                            ↓
+const refObject = useRef(intiialValue)
+
