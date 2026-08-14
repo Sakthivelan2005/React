@@ -2,18 +2,17 @@ import Home, {PlayGround} from './components/Home'
 import ArrayRendering from './components/ArrayRendering'
 import { Student } from './components/ArrayRendering'
 import Counter from './components/Counter'
-import { useEffect, useState } from 'react'
+// import { useEffect, useState } from 'react'
 import Form from './components/Form'
 import { Users } from './components/Users'
 import { RenderCount } from './components/RenderCount'
+import { AutoFocus } from './components/AutoFocus'
 function App() {
 
-  useEffect(() => {
-   // setRenderCount(prev => prev + 1)
-  })
   return (
     <>
-  {/* <RenderCount /> */}
+  <RenderCount />
+  <AutoFocus />
   <Counter />
     <Users />
     <Home />

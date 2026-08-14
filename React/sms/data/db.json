@@ -3,10 +3,26 @@
     {
       "FirstName": "Sakthivelan",
       "LastName": "Sankar",
-      "Email": "23uca016@loyolacollege.edu",
+      "Email": "sakthivelan.shankar@gmail.com",
       "Age": 18,
-      "Course": "Python Full Stack",
-      "id": "DM7ovP4VqIk"
+      "Course": "MERN Stack",
+      "id": "uIsLFrxX4QI"
+    },
+    {
+      "FirstName": "Sakthivelan",
+      "LastName": "Sankar",
+      "Email": "sakthivelan.shankar@gmail.com",
+      "Age": 18,
+      "Course": "MERN Stack",
+      "id": "5pOJCyoY8RQ"
+    },
+    {
+      "FirstName": "Sakthivelan",
+      "LastName": "Sdrr",
+      "Email": "sakthivelan.shankar@gmail.com",
+      "Age": 18,
+      "Course": "Java Full Stack",
+      "id": "CgvXT7olDiM"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

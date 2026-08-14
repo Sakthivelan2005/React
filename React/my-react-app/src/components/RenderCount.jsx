@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 export const RenderCount = () => {
 
-    const [RenderCount, setRenderCount] = useState(0);
+    const RenderCount = useRef(0);
 
     useEffect(() => {
-        setRenderCount(RenderCount + 1);
+      console.log("Rendering....!");
+       RenderCount.current = RenderCount.current + 1;
     })
   return (
-    <h1>RenderCount: {RenderCount}</h1>
+    <h1>RenderCount: {RenderCount.current}</h1>
   )
 }
