@@ -7,10 +7,16 @@ import Form from './components/Form'
 import { Users } from './components/Users'
 import { RenderCount } from './components/RenderCount'
 import { AutoFocus } from './components/AutoFocus'
+import { ExpensiveCalculation } from './components/ExpensiveCalculation'
+import { Lyrics } from './components/Lyrics'
+import { ExpensiveCallBack } from './components/ExpensiveCallBack'
 function App() {
 
   return (
     <>
+    <ExpensiveCallBack />
+    {/* <Lyrics />
+    <ExpensiveCalculation />
   <RenderCount />
   <AutoFocus />
   <Counter />
@@ -21,7 +27,7 @@ function App() {
   <ArrayRendering />
   <Student />
 
-    <Form />
+    <Form /> */}
     </>
   )
 }
