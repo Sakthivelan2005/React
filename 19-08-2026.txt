@@ -1,0 +1,16 @@
+context: 
+
+import React, { createContext } from 'react'
+//1. Create
+export const UserContext = createContext();
+
+//2. Provide
+<UserContext.Provider value={{user, SetUser}}>
+
+{/* Using Context*/}
+    {user !== "" ? <CheckOut /> : <Login />}
+</UserContext.Provider>
+
+//3. Use
+
+

@@ -1,0 +1,10 @@
+UseMemo()
+
+useMemo is a React Hook that calculates the result of a calculation between re-renders, improving performance by skipping expensive re-calculation unless dependencies change
+It takes function and Dependency array
+
+SYNTAX:
+useMemo(() => {}, [])
+
+
+Bable

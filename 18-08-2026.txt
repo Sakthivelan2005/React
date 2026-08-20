@@ -1,0 +1,10 @@
+useCallBack() - It memorize function
+
+memo() - memorize component
+
+useMemo() - Memorize Expensive Calculation
+
+Props Driling
+
+
+const ContextValue = useContext(ContextObject)l

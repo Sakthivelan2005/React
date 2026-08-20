@@ -12,3 +12,13 @@ const ReduceArr = arr.reduce((acum, val) => {
     return acum 
 });
 console.log(ReduceArr);
+
+// let arr = []
+
+// arr.push({name: "sakthi", age: 21});
+// arr.push({name: "Vivky", age: 23});
+// arr.push({name: "Fahed", age: 31});
+// arr.push({name: "Salpi", age: 25});
+
+
+// console.log(arr);
