@@ -1,9 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from "axios";
-
 const Form = () => {
-
-    const API = "http://localhost:3000/student";
 
     const formDataStructure = {
         FirstName: "",
@@ -14,26 +10,29 @@ const Form = () => {
     }
 
     const [formData,setFormData] = useState(formDataStructure);
+    const [isEdit, setIsEdit] = useState(false)
+    const [editData, setEditData] = useState(null);
 
-    const [showStudentList, setShowStudentList] = useState(false)
-    const [data, setData] = useState([])
+    const [data, setData] = useState([]);
 
     const courses = ["MERN Stack", "Python Full Stack", "Java Full Stack", "Data Science", "Data Analytics"]
     
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
     e.preventDefault();
 
-    if(formData.FirstName.length <=3 || formData.LastName.length <= 3){
+    if(formData.FirstName.length <3 || formData.LastName.length < 3){
         alert("First Name and Last Name must be above 3 characters");
     }
-    else{
-        const request = await axios.post(API, formData);
-        alert(request.statusText)
-        setFormData(formDataStructure)
-        setShowStudentList(true)
+    else if(isEdit){
+        handleUpdate(editData, formData)
+        setFormData(formDataStructure);
+        setIsEdit(false);
     }
-
-   
+    else{
+        
+       setFormData(formDataStructure);
+       setData([...data, formData]);
+    }
     }
 
     const handleChange = (e) => {
@@ -43,30 +42,44 @@ const Form = () => {
         ...prev, [name]: value
        }));
         console.log(formData);
+    }
 
+    const handleEdit = (idx) => {
+        setIsEdit(true);
+        setFormData(data[idx]);
+        setEditData(idx)
+
+    }
+
+    const handleUpdate = (idx, fdata) => {
+
+        setData(data.map((val, index) => {
+            if(idx === index){
+                val = fdata;
+            }
+            return val;
+        }))
+    }
+
+    // const handleDelete = (idx, fdata) => {
+
+    //     setData(data.map((val, index) => {
+    //         if(idx === index){
+    //             delete val;
+    //         }
+    //         return val;
+    //     }))
+    // }
+
+    const handleDelete = (idx) => {
+        setData(data.filter((val, index) => index !== idx))
     }
     
-    const fetchData = async () => {
-        const response = await axios.get(API);
-        setData(pre => pre = response.data)
-    }
-   
-    console.log(data.map((val) => val))
-
-    useEffect( () => {
-        try{
-           fetchData();            
-        }
-        catch(err){
-            alert(err)
-        }
-    },[showStudentList])
-
-
     return (
     <div>
     <form onSubmit={handleSubmit}>
         <h1>Student Registration Form</h1>
+        <h3>{isEdit ? "Edit your Form 📝" : "Fill Your Form"}</h3>
         <label htmlFor="fname">
             First Name: <input type="text" id='fname' name="FirstName" onChange={handleChange} value={formData.FirstName}  required/>
         </label>
@@ -83,17 +96,15 @@ const Form = () => {
             Age: <input type="number" id='age' name='Age' onChange={handleChange} value={formData.Age}  required/>
         </label>
         <br />
-        <label htmlFor="Course">
-            Course: <select onChange={handleChange} name='Course'>
-                {courses.map((val, idx) => (
-                    <option key={idx} value={val}>{val}</option>
-                ))}
-            </select>
-        </label>
+        Course: <select onChange={handleChange} name='Course'>
+            {courses.map((val, idx) => (
+                <option key={idx} value={val}>{val}</option>
+            ))}
+        </select>
         <br />
         
 
-        <button type='submit'>Submit</button>
+        <button type='submit'>{isEdit? "Update" : "Submit"}</button>
     </form>
 
     <div>
@@ -107,6 +118,8 @@ const Form = () => {
                 <td>Name</td>
                 <td>Age</td>
                 <td>Course</td>
+                <td>Delete</td>
+                <td>Edit</td>
 
             </tr>
             </thead>
@@ -122,6 +135,22 @@ const Form = () => {
                          <td>{val.FirstName + " " + val.LastName}</td>
                          <td> {val.Age}</td>
                          <td> {val.Course}</td>
+                         <td>
+                            <button onClick={(e) => {
+                            e.preventDefault();
+                            handleDelete(key)
+                            }}>
+                            🗑️
+                            </button>
+                        </td>
+                        <td>
+                            <button onClick={(e) => {
+                            e.preventDefault();
+                            handleEdit(key);
+                            }}>
+                            📝
+                            </button>
+                        </td>
                     </tr>
                         ))
              }
@@ -133,4 +162,4 @@ const Form = () => {
   )
 }
 
-export default Form
+export default Form;
