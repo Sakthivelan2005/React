@@ -10,12 +10,22 @@ import { AutoFocus } from './components/AutoFocus'
 import { ExpensiveCalculation } from './components/ExpensiveCalculation'
 import { Lyrics } from './components/Lyrics'
 import { ExpensiveCallBack } from './components/ExpensiveCallBack'
+import { UserContext } from './Context/Context'
+import { useState } from 'react'
+import { Checkout } from './components/Checkout'
+import { Login } from './components/Login'
 function App() {
 
+  const [user, setUser] = useState("")
   return (
     <>
+    <UserContext.Provider value={{user, setUser}}>
+
+      {user ? <Checkout /> : <Login />}
+    </UserContext.Provider>
+     {/*
     <ExpensiveCallBack />
-    {/* <Lyrics />
+    <Lyrics />
     <ExpensiveCalculation />
   <RenderCount />
   <AutoFocus />
