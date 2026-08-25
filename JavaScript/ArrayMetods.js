@@ -4,9 +4,9 @@ const rs = str.replace(" ","")
 
 
 const splice1 = [10,40]
-const msplice = splice1.splice(1,0,20,30)
-console.log(splice1)
-console.log(msplice)
+const msplice = splice1.splice(0,2,20,30)
+console.log("s: ",splice1)
+console.log("m:", msplice)
 
 const arr = [10,40,50,60]
 const splice = arr.toSpliced(2,1,"added")
@@ -42,27 +42,27 @@ array.forEach() //It won't return new array it traverse to each items returned
 */
 
 //Task-1 Reverse the string
-const str2 = "madam";
-if(str === str2.split("").reverse().join("")){
-    console.log("It is palinedrome");
-}
-else{
-    console.log("It is not palinedrome")
-}
+// const str2 = "madam";
+// if(str === str2.split("").reverse().join("")){
+//     console.log("It is palinedrome");
+// }
+// else{
+//     console.log("It is not palinedrome")
+// }
 
-//Task-2 Reverse the string without Reversed() function
-const string = "Madnam".toLowerCase();
+// //Task-2 Reverse the string without Reversed() function
+// const string = "Madnam".toLowerCase();
 
-let stack = string.split("");
+// let stack = string.split("");
 
-let reverse = ""
-while(stack.length > 0){
-    reverse += stack.pop()
-}
+// let reverse = ""
+// while(stack.length > 0){
+//     reverse += stack.pop()
+// }
 
-if(string === reverse){
-    console.log("It's palindrome")
-}
-else{
-    console.log(string, " is not a Palindrome")
-}
+// if(string === reverse){
+//     console.log("It's palindrome")
+// }
+// else{
+//     console.log(string, " is not a Palindrome")
+// }

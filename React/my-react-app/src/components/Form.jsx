@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 export default function Form() {
+    const Navigate = useNavigate();
     const [value, setValue] = useState({first:"", last: ""});
     const handleChangeFirst = (e) => {
         console.log(e.target.value);
@@ -14,6 +16,8 @@ export default function Form() {
     const handleSubmit = (e) => {
         e.preventDefault();
         e.target.submit();
+        Navigate('/')
+
     }
 
     console.log("Val: ", value)

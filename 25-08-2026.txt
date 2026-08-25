@@ -1,0 +1,12 @@
+React-Router-DOM
+Routes
+Route
+
+Link
+
+useNavigate
+
+useParams
+
+in URL => :id
+

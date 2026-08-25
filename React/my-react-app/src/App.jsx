@@ -14,15 +14,17 @@ import { UserContext } from './Context/Context'
 import { useState } from 'react'
 import { Checkout } from './components/Checkout'
 import { Login } from './components/Login'
+import { BrowserRouter, Link, Route, Router, Routes } from 'react-router-dom'
+import { PageNotFound } from './components/PageNotFound'
 function App() {
 
   const [user, setUser] = useState("")
   return (
     <>
-    <UserContext.Provider value={{user, setUser}}>
+    {/* <UserContext.Provider value={{user, setUser}}>
 
       {user ? <Checkout /> : <Login />}
-    </UserContext.Provider>
+    </UserContext.Provider> */}
      {/*
     <ExpensiveCallBack />
     <Lyrics />
@@ -31,13 +33,34 @@ function App() {
   <AutoFocus />
   <Counter />
     <Users />
-    <Home />
-    <PlayGround />
+    
+    */}
 
-  <ArrayRendering />
-  <Student />
+    
 
-    <Form /> */}
+     <BrowserRouter>
+     <nav>
+      <Link to={'/'}>Home</Link>
+      <Link to={'/playground'}>PlayGround</Link>
+      <Link to={'/student'}>Student</Link>
+      <Link to={'/form'}>Form</Link>
+     </nav>
+
+     <Routes>
+      <Route path='/' element={<Home />} />
+      <Route path='/playground' element={<PlayGround />} />
+      <Route path='/student' element={<Student />} />
+      <Route path='/form' element={<Form /> } />
+      <Route path='*' element={<PageNotFound />} />
+     </Routes>
+     </BrowserRouter>
+    
+    
+
+   {/* <ArrayRendering /> */}
+  
+
+    
     </>
   )
 }

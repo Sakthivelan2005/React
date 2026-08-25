@@ -1,5 +1,6 @@
 import React from 'react'
 import Students from './Students';
+import { Link } from 'react-router-dom';
 
 export default function ArrayRendering() {
     const students = ["Jayakath", "Ajith", "Mahesh", "Neresh", "Sakthi"]
@@ -31,7 +32,7 @@ export function Student(){
     {student.map((val) => {
         console.log(val)
         return (
-            <Students key={val.id} name={val.name} age={val.age} message={val.msg} />
+            <Link to={'/student/:id'}>{val.name}</Link>
         )
     })}
     </div>
