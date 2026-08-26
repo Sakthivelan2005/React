@@ -2,6 +2,15 @@ import React from 'react'
 import Students from './Students';
 import { Link } from 'react-router-dom';
 
+export const studentData = [
+        {id:1, name: "Sakthi", age:20, msg: "Good Morning"},
+        {id:2, name: "JayaKanth", age:20, msg: "Good Afternoon"},
+        {id:3, name: "Naresh", age:20, msg: "Good evening"},
+        {id:4, name: "Mahesh", age:20, msg: "Good night"},
+        
+    ];
+
+
 export default function ArrayRendering() {
     const students = ["Jayakath", "Ajith", "Mahesh", "Neresh", "Sakthi"]
   return (
@@ -19,20 +28,17 @@ export default function ArrayRendering() {
 }
 
 export function Student(){
-    const student = [
-        {id:1, name: "Sakthi", age:20, msg: "Good Morning"},
-        {id:2, name: "JayaKanth", age:20, msg: "Good Afternoon"},
-        {id:3, name: "Naresh", age:20, msg: "Good evening"},
-        {id:4, name: "Mahesh", age:20, msg: "Good night"},
-        
-    ];
+    
 
     return (
     <div>
-    {student.map((val) => {
+    {studentData.map((val) => {
         console.log(val)
         return (
-            <Link to={'/student/:id'}>{val.name}</Link>
+            <div key={val.id}>
+            <br />
+            <Link to={`/student/${val.id}`}>{val.id}. {val.name}</Link>
+            </div>
         )
     })}
     </div>

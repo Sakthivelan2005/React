@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { UserContext } from '../Context/Context';
 
 export default function Form() {
+    const {setUser} = useContext(UserContext);
     const Navigate = useNavigate();
     const [value, setValue] = useState({first:"", last: ""});
     const handleChangeFirst = (e) => {
@@ -15,7 +17,8 @@ export default function Form() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        e.target.submit();
+        setUser(value.first+ " " +value.last)
+        setValue({first:"", last: ""});
         Navigate('/')
 
     }

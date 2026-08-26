@@ -16,6 +16,9 @@ import { Checkout } from './components/Checkout'
 import { Login } from './components/Login'
 import { BrowserRouter, Link, Route, Router, Routes } from 'react-router-dom'
 import { PageNotFound } from './components/PageNotFound'
+import Students from './components/Students'
+import { Contact } from './components/Contact'
+import { ProtectedRoute } from './components/ProtectedRoute'
 function App() {
 
   const [user, setUser] = useState("")
@@ -37,23 +40,36 @@ function App() {
     */}
 
     
-
+    <UserContext.Provider value={{user, setUser}}>
      <BrowserRouter>
      <nav>
-      <Link to={'/'}>Home</Link>
-      <Link to={'/playground'}>PlayGround</Link>
-      <Link to={'/student'}>Student</Link>
+      <Link to={'/'} state={{name:"Jaya",phone:9876543210}}>Home </Link>
+      <Link to={'/playground'} >PlayGround </Link>
+      <Link to={'/student'}>Student </Link>
       <Link to={'/form'}>Form</Link>
      </nav>
 
      <Routes>
       <Route path='/' element={<Home />} />
-      <Route path='/playground' element={<PlayGround />} />
-      <Route path='/student' element={<Student />} />
-      <Route path='/form' element={<Form /> } />
-      <Route path='*' element={<PageNotFound />} />
+
+      {/* Nest Route */}
+      
+        <Route path='/playground' element={
+           <ProtectedRoute isLogin={true}>
+              <PlayGround />
+           </ProtectedRoute>
+          }>
+         
+            <Route path='contact' element={<Contact />} />
+         
+        </Route>
+        <Route path='/student' element={<Student />} />
+        <Route path='/student/:id' element={<Students />} />
+        <Route path='/form' element={<Form /> } />
+        <Route path='*' element={<PageNotFound />} />
      </Routes>
      </BrowserRouter>
+     </UserContext.Provider>
     
     
 
