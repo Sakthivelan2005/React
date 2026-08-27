@@ -1,0 +1,8 @@
+Redux is single store containing "Global" state
+Dispatching plain Object actions to the store when something happens in the app.
+
+To Configure store - Syntax
+
+import { configureStore } from "@eeduxjs/toolkit"
+
+consy store = configureStore({ reducer: counterReducer})
