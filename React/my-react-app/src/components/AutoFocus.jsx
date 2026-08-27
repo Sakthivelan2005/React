@@ -13,7 +13,7 @@ export const AutoFocus = () => {
   return (
     <div>
 
-            Name:  <input type="text"name ref={inputRef} name="name" placeholder='Enter your Name' />
+            Name:  <input type="text"name ref={inputRef}  placeholder='Enter your Name' />
 
        
         <br />
