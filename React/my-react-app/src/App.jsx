@@ -19,6 +19,7 @@ import { PageNotFound } from './components/PageNotFound'
 import Students from './components/Students'
 import { Contact } from './components/Contact'
 import { ProtectedRoute } from './components/ProtectedRoute'
+import { ReduxCounter } from './components/ReduxCounter'
 function App() {
 
   const [user, setUser] = useState("")
@@ -47,10 +48,11 @@ function App() {
       <Link to={'/playground'} >PlayGround </Link>
       <Link to={'/student'}>Student </Link>
       <Link to={'/form'}>Form</Link>
+      <Link to={'/count'}>Count</Link>
      </nav>
 
      <Routes>
-      <Route path='/' element={<Home />} />
+      {/* <Route path='/' element={<Home />} /> */}
 
       {/* Nest Route */}
       
@@ -67,6 +69,7 @@ function App() {
         <Route path='/student/:id' element={<Students />} />
         <Route path='/form' element={<Form /> } />
         <Route path='*' element={<PageNotFound />} />
+        <Route path='/count' element={<ReduxCounter />} />
      </Routes>
      </BrowserRouter>
      </UserContext.Provider>

@@ -9,6 +9,8 @@ export const RenderCount = () => {
        RenderCount.current = RenderCount.current + 1;
     })
   return (
-    <h1>RenderCount: {RenderCount.current}</h1>
+    <div>
+      <h1>RenderCount: {RenderCount.current}</h1>
+    </div>
   )
 }
