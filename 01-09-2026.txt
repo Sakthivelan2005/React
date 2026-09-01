@@ -1,0 +1,7 @@
+
+useLayoutEffect - First loads the component 
+
+Lazy() -> callback
+
+suspense -> fallback={<h1>Loading..!</h1>}
+
